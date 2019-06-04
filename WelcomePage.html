@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html land = "en-US">
+<head>
+<title>Welcome Page
+</title>
+</head>
+
+<style>
+    .welcomePageContents {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="welcomePageContents">
+        <h1>
+            <img src="uottawaLogo.png">
+            <br>
+            Search Local Eateries
+        </h1>
+
+        <div>
+            <label for="province">Your Province</label>
+            <select autofocus=true id="province">
+                <option value="ontario">Ontario</option>
+                <option value="quebec">Quebec</option>
+                <option value="nova scotia">Nova Scotia</option>
+                <option value="new brunswick">New Brunswick</option>
+                <option value="manitoba">Manitoba</option>
+                <option value="british columbia">British Columbia</option>
+                <option value="prince edward island">Prince Edward Island</option>
+                <option value="saskatchewan">Saskatchewan</option>
+                <option value="alberta">Alberta</option>
+                <option value="newfoundland and labrador">Newfoundland and Labrador</option>
+                <option value="northwest territories">Northwest Territories</option>
+                <option value="yukon">Yukon</option>
+                <option value="nunavut">Nunavut</option>
+            </select>
+
+            <label for="city">Your City</label>
+            <select autofocus=true id="city" name="city">
+                <option value="ottawa">Ottawa</option>
+                <option value="toronto">Toronto</option>
+            </select>
+        </div>
+
+        <br><br>
+
+        <div style="border-style: solid; width: 475px; margin: 0 auto;">
+            <input type="radio" value="breakfast" id="breakfast" name="mealType">
+            <label for="breakfast">Breakfast</label>
+
+            <input type="radio" value="lunch" id="lunch" name="mealType">
+            <label for="lunch">Lunch</label>
+
+            <input type="radio" value="dinner" id="dinner" name="mealType">
+            <label for="dinner">Dinner</label>
+
+            <input type="radio" value="desert" id="desert" name="mealType">
+            <label for="desert">Desert</label>
+                
+            <input type="radio" value="drinks" id="drinks" name="mealType">
+            <label for="drinks">Drinks</label>
+                
+            <input type="radio" value="takeOut" id="takeOut" name="mealType">
+            <label for="takeOut">Take-out</label> 
+        </div>
+
+        <br><br>
+
+        <div>
+            <input type="text" name="textSearch" placeholder="Search by eatery name or key words..." size=70>
+            <br><br>
+            <button type="button" style="width: 15%;">Search</button>
+        </div>
+    </div>
+</body>
+</html>
