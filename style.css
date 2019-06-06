@@ -8,7 +8,7 @@ Brown - #6A3E37
 */
 body {
     font-family: 'Verdana', sans-serif;
-    color: black;
+    color: #6A3E37;
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -16,7 +16,9 @@ body {
 }
 
 h1 {
+    text-align: center;
     color: #3993DD;
+    font-style: italic;
 }
 
 h2 {
@@ -24,13 +26,33 @@ h2 {
 }
 
 h3 {
+    margin: auto;
+    text-align: center;
+    background-color: #29E7CD;
+    padding: 10px;
+    width: 75%;
+    border-radius: 10px;
+}
+
+.button{
+    background-color: #E0ACD5;
     color: #6A3E37;
-    font-style: italic;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    transition-duration: 0.1s;
+}
+
+.button:hover{
+    background-color: rgb(230, 119, 206);
 }
 
 #mainStuff {
+    margin: auto;
     background-color: #F4EBE8;
     box-shadow: 5px 5px 5px;
-    width: 40%;
+    width: 45%;
     padding: 10px;
 }

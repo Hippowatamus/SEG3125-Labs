@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Restaurant Menu</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
         
     </head>
     <style>
@@ -10,14 +11,16 @@
         }
     </style>
     <body class="menu" onload="populateMenu()">
-        <div id="restoIdentity"></div>
+        <div id="mainStuff">
+            <div id="restoIdentity"></div>
 
-        <div class="menu" id="menu">
-            <h2>Menu</h2>
+            <div class="menu" id="menu">
+                <h2>Menu</h2>
+            </div>
+    
+            <button type="button" class="button" onclick="navToOrderPage()">Order</button>
+    
+            <script src="script.js"></script>
         </div>
-
-        <button type="button" onclick="navToCheckoutPage()">Order</button>
-
-        <script src="script.js"></script>
     </body>
 </html>
