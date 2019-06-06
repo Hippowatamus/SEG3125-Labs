@@ -259,8 +259,30 @@ function removeFromCart(cartIndex){
 }
 
 function checkFields(){
+    var checksPassed = true;
+
+    if ((document.getElementById("cardHolder").value == "")&&(!document.getElementById("cardHolder").hasAttribute("disabled"))){
+        alert("Enter the card holder's name.")
+        checksPassed = false;
+    }
+
+    var cNum1 = /[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/;
+    var cNum2 = /[0-9][0-9][0-9][0-9] [0-9][0-9][0-9][0-9] [0-9][0-9][0-9][0-9] [0-9][0-9][0-9][0-9]/;
+    var clen = document.getElementById("cardNumber").value.length;
+    if (((!cNum1.test(document.getElementById("cardNumber").value))||(clen > 16))&&((!cNum2.test(document.getElementById("cardNumber").value))||(clen > 19))){
+        alert("Invalid Card Number.");
+        checksPassed = false;
+    }
+
+    var eDate = /[1-12]\/[0-9][0-9]/
+    if (!eDate.test(document.getElementById("cardExpiration").value)&&(!document.getElementById("cardExpiration").hasAttribute("disabled"))){
+        alert("Invalid Card Expiration Date.")
+        checksPassed = false;
+    }
+
     if (document.getElementById("name").value == ""){
         alert("Enter your name.")
+        checksPassed = false;
     }
 
     if (document.getElementById("address").value == ""){
@@ -270,13 +292,28 @@ function checkFields(){
 
     var pCode1 = /[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]/;
     var pCode2 = /[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]/;
-    if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
-        alert("Invalid Postal Code");
+    var len = document.getElementById("pcode").value.length;
+    if (((!pCode1.test(document.getElementById("pcode").value))||(len > 6))&&((!pCode2.test(document.getElementById("pcode").value))||(len > 7))){
+        alert("Invalid Postal Code.");
+        checksPassed = false;
     }
 
     if (checksPassed){
+        alert("Order complete! Returning to Home page...");
         navToWelcomePage();
     }
+}
+
+function COD(){
+    document.getElementById("cardHolder").setAttribute("disabled", true);
+    document.getElementById("cardNumber").setAttribute("disabled", true);
+    document.getElementById("cardExpiration").setAttribute("disabled", true);
+}
+
+function DorC(){
+    document.getElementById("cardHolder").removeAttribute("disabled");
+    document.getElementById("cardNumber").removeAttribute("disabled");
+    document.getElementById("cardExpiration").removeAttribute("disabled");
 }
 
 function populateOrderInfoCheckout(){

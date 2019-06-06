@@ -19,22 +19,22 @@
             </ul>
             <h3 id = grandTotal></h3>
             <h2>Payment Details:</h2>
-            <input type="radio" name="gender" value="Debit"> Debit Card
-            <input type="radio" name="gender" value="Credit"> Credit Card
-            <input type="radio" name="gender" value="COD"> Cash
+            <input type="radio" name="pay" value="Debit" onclick=DorC() checked=true> Debit Card
+            <input type="radio" name="pay" value="Credit" onclick=DorC()> Credit Card
+            <input type="radio" name="pay" value="COD" id="COD" onclick=COD()> Cash on Delivery
             <br>
             <br>
             <label for="cardHolder">Card Holder's Name:</label>
             <br>
-            <input type="text" name="cardHolder">
+            <input type="text" id="cardHolder">
             <br>
             <label for="cardNumber">Card Number:</label>
             <br>
-            <input type="text" name="cardNumber">
+            <input type="text" id="cardNumber">
             <br>
             <label for="cardExpiration">Card Expiration Date:</label>
             <br>
-            <input type="text" name="cardExpiration">
+            <input type="text" id="cardExpiration">
             <h2>Enter your Delivery Information: </h2>
             Name: <input type="text" id="name"><br><br>
             Address: <input type="text" id="address">
