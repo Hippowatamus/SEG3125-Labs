@@ -15,6 +15,10 @@ function navToMenuPage(index) {
     window.location.href = "RestoMenu.html";
 }
 
+function backToMenuPage(){
+    window.location.href = "RestoMenu.html";
+}
+
 function navToOrderPage() {
     window.location.href = "OrderPage.html";
 }
