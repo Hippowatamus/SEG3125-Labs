@@ -261,18 +261,27 @@ function removeFromCart(cartIndex){
 function checkFields(){
     var pCode1 = /[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]/;
     var pCode2 = /[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]/;
+
+    var checksPassed = true;
+
     if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
         alert("Invalid Postal Code");
+        checksPassed = false;
     }
 
     if (document.getElementById("address").value == ""){
         alert("Enter your address.")
+        checksPassed = false;
     }
 
     if (document.getElementById("name").value == ""){
         alert("Enter your name.")
+        checksPassed = false;
     }
 
+    if (checksPassed){
+        navToWelcomePage();
+    }
 }
 
 function populateOrderInfoCheckout(){
@@ -303,7 +312,4 @@ function populateOrderInfoCheckout(){
     document.getElementById("orderDetails").appendChild(tempLi2);
 
     document.getElementById("grandTotal").innerHTML = "Grand Total = $"+(totalHST+total);
-    
-    hstHeader.innerHTML = 
-    document.getElementById("orderDetails").appendChild();
 }
