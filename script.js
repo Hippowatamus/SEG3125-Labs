@@ -38,6 +38,7 @@ class menuItem {
         this.image=image;
         this.price=price;
         this.description=description;
+        this.quantity=0;
     }
 }
 
@@ -154,6 +155,7 @@ function populateMenu(){
 
         var addToCart = document.createElement("button");
         addToCart.setAttribute("onclick", "addToCart("+i+")");
+        addToCart.setAttribute("class", "button");
         addToCart.innerHTML = "Add to Cart";
 
         document.getElementById("menu").appendChild(addToCart);
@@ -165,17 +167,87 @@ function populateMenu(){
 }
 
 function addToCart(menuItemIndex){
-    if(localStorage.getItem("cart")==null){
-        var cartAr = [];
-        localStorage.setItem("cart", JSON.stringify(cartAr));
-    }
-
-    cartAr = JSON.parse(localStorage.getItem("cart"));
-
     var restos = JSON.parse(localStorage.getItem("allRestos"));
     var restoIndex = JSON.parse(localStorage.getItem("allRestosIndex"));
 
-    cartAr.push(restos[restoIndex].menuItemsArray[menuItemIndex]);
+    if(localStorage.getItem("cart")==null){
+        var cartAr = [];
+
+        for(const resto of restos){
+            for(const food of resto.menuItemsArray){
+                cartAr.push(food);
+            }
+        }
+        
+        localStorage.setItem("cart", JSON.stringify(cartAr));
+    }
+
+    var cartAr = JSON.parse(localStorage.getItem("cart"));
+
+
+    for(menuItem of cartAr){
+        if (menuItem.name==restos[restoIndex].menuItemsArray[menuItemIndex].name){
+            menuItem.quantity++;
+        }
+    }
 
     localStorage.setItem("cart", JSON.stringify(cartAr));
+}
+
+function populateOrder(){
+    var cartAr = JSON.parse(localStorage.getItem("cart"));
+
+    var total=0;
+    var i =0;
+    for(const menuItem of cartAr){
+        if(menuItem.quantity>0){
+            var orderedItem = document.createElement("li");
+            orderedItem.setAttribute("id", "item#"+i);
+
+            var itemName = document.createElement("h3");
+            itemName.innerHTML = menuItem.name;
+            orderedItem.appendChild(itemName)
+
+
+            var itemDescList = document.createElement("ul");
+
+            var itemQuantity = document.createElement("li");
+            itemQuantity.innerHTML = "Quantity: "+menuItem.quantity;
+            itemDescList.appendChild(itemQuantity)
+
+            var itemTotalCost = document.createElement("li");
+            itemTotalCost.innerHTML = "Cost of Items: $"+(menuItem.price*menuItem.quantity);
+            itemDescList.appendChild(itemTotalCost);
+
+            total+=menuItem.price*menuItem.quantity;
+
+            orderedItem.appendChild(itemDescList);
+
+
+            var removeOne = document.createElement("button");
+            removeOne.innerHTML = "Remove One";
+            removeOne.setAttribute("onclick", "removeFromCart("+i+")");
+
+
+            document.getElementById("menuItemsToOrder").appendChild(orderedItem);
+            document.getElementById("menuItemsToOrder").appendChild(removeOne);
+
+            
+        }
+        i++;
+    }
+
+    document.getElementById("total").innerHTML = "Total Cost = $"+total;
+
+}
+
+function removeFromCart(cartIndex){
+    var cartAr = JSON.parse(localStorage.getItem("cart"));
+    if(cartAr[cartIndex].quantity>0){
+        cartAr[cartIndex].quantity--;
+    }
+    localStorage.setItem("cart", JSON.stringify(cartAr));
+    location.reload();
+
+    
 }

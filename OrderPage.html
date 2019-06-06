@@ -1,34 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src = "script.js"></script>
+        
     </head>
-    <body>
+    <body onload="populateOrder()">
         <h1>My Order</h1>
-        <ul>
-            <li><h3>Banana on a Stick</h3>
-                <ul>
-                    <li>2</li>
-                    <li>$10.00</li>
-                </ul>
-                <button type="button">X</button>
-            </li>
-            <li><h3>Banana on a Stick with Chocolate</h3>
-                <ul>
-                    <li>3</li>
-                    <li>$18.00</li>
-                </ul>
-                <button type="button">X</button>
-            </li>
-            <li><h3>Banana on a Stick with Chocolate and Nuts</h3>
-                <ul>
-                    <li>2</li>
-                    <li>$14.00</li>
-                </ul>
-                <button type="button">X</button>
-            </li>
+        <ul id="menuItemsToOrder">
         </ul>
-        <h2>Total: $42.00</h2>
-        <button type="button">Checkout</button>
+        <h2 id="total"></h2>
+        <button type="button" onclick = "navToCheckoutPage()">Checkout</button>
+        <script src = "script.js"></script>
     </body>
 </html>
