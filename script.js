@@ -209,7 +209,7 @@ function populateOrder(){
             var orderedItem = document.createElement("li");
             orderedItem.setAttribute("id", "item#"+i);
 
-            var itemName = document.createElement("h3");
+            var itemName = document.createElement("h4");
             itemName.innerHTML = menuItem.name;
             orderedItem.appendChild(itemName)
 
@@ -259,18 +259,18 @@ function removeFromCart(cartIndex){
 }
 
 function checkFields(){
-    var pCode1 = /[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]/;
-    var pCode2 = /[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]/;
-    if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
-        alert("Invalid Postal Code");
+    if (document.getElementById("name").value == ""){
+        alert("Enter your name.")
     }
 
     if (document.getElementById("address").value == ""){
         alert("Enter your address.")
     }
 
-    if (document.getElementById("name").value == ""){
-        alert("Enter your name.")
+    var pCode1 = /[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]/;
+    var pCode2 = /[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]/;
+    if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
+        alert("Invalid Postal Code");
     }
 
 }
