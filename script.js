@@ -186,9 +186,9 @@ function checkFields(){
     if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
         alert("Invalid Postal Code");
     }
-    
-    if (document.getElementById("name").value == ""){
-        alert("Enter your name.")
+
+    if (document.getElementById("address").value == ""){
+        alert("Enter your address.")
     }
 
     if (document.getElementById("name").value == ""){
