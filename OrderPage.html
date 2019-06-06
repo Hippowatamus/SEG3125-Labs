@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
+    <style>
+        body{
+            background-image: url("orderBG.jpg");
+        }
+    </style>
     <body onload="populateOrder()">
-        <h1>My Order</h1>
-        <ul id="menuItemsToOrder">
-        </ul>
-        <h2 id="total"></h2>
-        <button type="button" onclick = "navToCheckoutPage()">Checkout</button>
-        <button type="button" onclick = "backToMenuPage()">Return To Menu</button>
-        <script src = "script.js"></script>
+        <div id="mainStuff">
+            <h1>My Order</h1>
+            <ul id="menuItemsToOrder">
+            </ul>
+            <h2 id="total"></h2>
+            <button type="button" class="button" onclick = "navToCheckoutPage()">Checkout</button>
+            <button type="button" class="button button2" onclick = "backToMenuPage()">Return To Menu</button>
+            <script src = "script.js"></script>
+        </div>
     </body>
 </html>
