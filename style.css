@@ -1,0 +1,36 @@
+/*
+Colour scheme
+light purp - #E0ACD5
+blue blue - #3993DD
+off white - #F4EBE8
+Minty Green - #29E7CD
+Brown - #6A3E37
+*/
+body {
+    font-family: 'Verdana', sans-serif;
+    color: black;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: #3993DD;
+}
+
+h2 {
+    color: #3993DD;
+}
+
+h3 {
+    color: #6A3E37;
+    font-style: italic;
+}
+
+#mainStuff {
+    background-color: #F4EBE8;
+    box-shadow: 5px 5px 5px;
+    width: 40%;
+    padding: 10px;
+}
