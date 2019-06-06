@@ -2,20 +2,19 @@
 <html>
     <head>
         <title>Restaurant Menu</title>
+        
     </head>
     <style>
         .menu {
             text-align: center;
         }
     </style>
-    <body class="menu" onload=>
+    <body class="menu" onload="populateMenu()">
         <div id="restoIdentity"></div>
 
-        <div class="menu" id="menu"></div>
-
-        <br>
-        <hr width=50%>
-        <br>
+        <div class="menu" id="menu">
+            <h2>Menu</h2>
+        </div>
 
         <button type="button" onclick="navToCheckoutPage()">Order</button>
 
