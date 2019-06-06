@@ -272,3 +272,36 @@ function checkFields(){
     }
 
 }
+
+function populateOrderInfoCheckout(){
+    var cartAr = JSON.parse(localStorage.getItem("cart"));
+    var total = 0;
+    for (const menuItem of cartAr){
+        if(menuItem.quantity>0){
+            var item = document.createElement("li");
+            item.innerHTML = menuItem.name+" x "+menuItem.quantity;
+            document.getElementById("orderDetails").appendChild(item);
+
+            total+=menuItem.quantity*menuItem.price;
+        }
+    }
+    var tempLi1 = document.createElement("li");
+    var tempLi2 = document.createElement("li");
+
+    var totalHeader = document.createElement("h4");
+    totalHeader.innerHTML = "Total = $"+total;
+    tempLi1.appendChild(totalHeader);
+
+    var totalHST = (Math.round(total*13)/100);
+    var hstHeader = document.createElement("h4");
+    hstHeader.innerHTML = "HST = $"+totalHST;
+    tempLi2.appendChild(hstHeader);
+
+    document.getElementById("orderDetails").appendChild(tempLi1);
+    document.getElementById("orderDetails").appendChild(tempLi2);
+
+    document.getElementById("grandTotal").innerHTML = "Grand Total = $"+(totalHST+total);
+    
+    hstHeader.innerHTML = 
+    document.getElementById("orderDetails").appendChild();
+}
