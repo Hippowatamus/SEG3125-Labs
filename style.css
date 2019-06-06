@@ -34,9 +34,13 @@ h3 {
     border-radius: 10px;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .button{
-    background-color: #E0ACD5;
-    color: #6A3E37;
+    background-color: #3993DD;
+    color: #F4EBE8;
     width: 200px;
     height: 50px;
     font-size: 20px;
@@ -45,7 +49,29 @@ h3 {
     transition-duration: 0.1s;
 }
 
+
 .button:hover{
+    background-color: rgb(131, 199, 255);
+}
+
+.button2{
+    background-color: #E0ACD5;
+    color: #6A3E37;
+}
+
+.button3{
+    background-color: #E0ACD5;
+    color: #6A3E37;
+    font-size: 17px;
+    width: 150px;
+    height: 30px;
+}
+
+.button2:hover{
+    background-color: rgb(230, 119, 206);
+}
+
+.button3:hover{
     background-color: rgb(230, 119, 206);
 }
 

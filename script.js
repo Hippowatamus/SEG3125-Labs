@@ -85,6 +85,7 @@ function populateRestos(){
 
 
         var orderBtn = document.createElement("button");
+        orderBtn.setAttribute("class","button");
         orderBtn.innerHTML = "Order Here";
         orderBtn.setAttribute("onclick", "navToMenuPage("+i+")");
         document.getElementById("searchedRestos").appendChild(orderBtn);
@@ -231,6 +232,7 @@ function populateOrder(){
             var removeOne = document.createElement("button");
             removeOne.innerHTML = "Remove One";
             removeOne.setAttribute("onclick", "removeFromCart("+i+")");
+            removeOne.setAttribute("class", "button button3");
 
 
             document.getElementById("menuItemsToOrder").appendChild(orderedItem);
