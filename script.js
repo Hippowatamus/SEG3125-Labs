@@ -251,3 +251,20 @@ function removeFromCart(cartIndex){
 
     
 }
+
+function checkFields(){
+    var pCode1 = /[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]/;
+    var pCode2 = /[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]/;
+    if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
+        alert("Invalid Postal Code");
+    }
+    
+    if (document.getElementById("name").value == ""){
+        alert("Enter your name.")
+    }
+
+    if (document.getElementById("name").value == ""){
+        alert("Enter your name.")
+    }
+
+}
