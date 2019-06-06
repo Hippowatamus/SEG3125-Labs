@@ -259,19 +259,8 @@ function removeFromCart(cartIndex){
 }
 
 function checkFields(){
-<<<<<<< HEAD
     if (document.getElementById("name").value == ""){
         alert("Enter your name.")
-=======
-    var pCode1 = /[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]/;
-    var pCode2 = /[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]/;
-
-    var checksPassed = true;
-
-    if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
-        alert("Invalid Postal Code");
-        checksPassed = false;
->>>>>>> 58b5566072798dffdaaa7f69af4192b9f35883d4
     }
 
     if (document.getElementById("address").value == ""){
@@ -279,16 +268,10 @@ function checkFields(){
         checksPassed = false;
     }
 
-<<<<<<< HEAD
     var pCode1 = /[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]/;
     var pCode2 = /[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]/;
     if (!pCode1.test(document.getElementById("pcode").value)&&!pCode2.test(document.getElementById("pcode").value)){
         alert("Invalid Postal Code");
-=======
-    if (document.getElementById("name").value == ""){
-        alert("Enter your name.")
-        checksPassed = false;
->>>>>>> 58b5566072798dffdaaa7f69af4192b9f35883d4
     }
 
     if (checksPassed){
