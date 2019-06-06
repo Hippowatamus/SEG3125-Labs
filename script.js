@@ -153,11 +153,29 @@ function populateMenu(){
         document.getElementById("menu").appendChild(itemAtts);
 
         var addToCart = document.createElement("button");
+        addToCart.setAttribute("onclick", "addToCart("+i+")");
         addToCart.innerHTML = "Add to Cart";
+
         document.getElementById("menu").appendChild(addToCart);
 
         document.getElementById("menu").appendChild(document.createElement("hr"));
-
+        i++;
     }
 
+}
+
+function addToCart(menuItemIndex){
+    if(localStorage.getItem("cart")==null){
+        var cartAr = [];
+        localStorage.setItem("cart", JSON.stringify(cartAr));
+    }
+
+    cartAr = JSON.parse(localStorage.getItem("cart"));
+
+    var restos = JSON.parse(localStorage.getItem("allRestos"));
+    var restoIndex = JSON.parse(localStorage.getItem("allRestosIndex"));
+
+    cartAr.push(restos[restoIndex].menuItemsArray[menuItemIndex]);
+
+    localStorage.setItem("cart", JSON.stringify(cartAr));
 }
